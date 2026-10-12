@@ -1,0 +1,159 @@
+/* ------------------------------------------------------------------
+   Tipografia e efeitos de texto do site.
+   Carregado depois do main.css do tema, então estas regras vencem.
+   Fontes: Source Serif 4 (texto e títulos) e IBM Plex Mono (rótulos).
+   ------------------------------------------------------------------ */
+
+:root {
+  --fonte-texto: "Source Serif 4", Charter, "Iowan Old Style", Georgia, serif;
+  --fonte-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ---------- texto corrido ---------- */
+
+body {
+  font-family: var(--fonte-texto);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- títulos ---------- */
+
+h1,
+h2,
+h3,
+h4,
+.post-title {
+  font-family: var(--fonte-texto);
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+
+.post-header .post-title {
+  font-size: 2.6rem;
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+h3,
+h4 {
+  font-size: 1.1rem;
+  margin-top: 2.25rem;
+  margin-bottom: 0.6rem;
+}
+
+/* subtítulo logo abaixo do nome */
+.post-header .desc {
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  font-style: normal;
+  color: var(--global-text-color-light);
+}
+
+.post-header {
+  margin-bottom: 1.6rem;
+}
+
+/* ---------- links: sublinhado discreto ---------- */
+
+a {
+  text-decoration: underline;
+  text-decoration-color: var(--global-divider-color);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-color: var(--global-theme-color);
+}
+
+/* ---------- barra de navegação em mono ---------- */
+
+.navbar .nav-item .nav-link {
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+/* ---------- rodapé em mono ---------- */
+
+footer {
+  font-family: var(--fonte-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  color: var(--global-text-color-light);
+}
+
+/* ---------- entrada da página: o nome "se resolve" saindo do desfoque ---------- */
+
+@keyframes resolve {
+  from {
+    opacity: 0;
+    filter: blur(22px);
+    letter-spacing: 0.08em;
+    transform: translateY(6px);
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    letter-spacing: -0.012em;
+    transform: none;
+  }
+}
+
+@keyframes resolve-soft {
+  from {
+    opacity: 0;
+    filter: blur(9px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.post-header .post-title {
+  animation: resolve 1.15s cubic-bezier(0.22, 0.68, 0.24, 1) both;
+  will-change: filter, opacity;
+}
+
+.post-header .desc {
+  animation: resolve-soft 0.8s 0.5s ease-out both;
+}
+
+.profile {
+  animation: resolve-soft 1s 0.3s ease-out both;
+}
+
+/* respeita quem desativa animações no sistema */
+@media (prefers-reduced-motion: reduce) {
+  .post-header .post-title,
+  .post-header .desc,
+  .profile {
+    animation: none;
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .post-header .post-title {
+    font-size: 2rem;
+  }
+}
