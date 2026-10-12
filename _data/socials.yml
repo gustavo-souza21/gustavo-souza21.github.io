@@ -1,0 +1,7 @@
+# Links sociais, exibidos na ordem em que aparecem aqui.
+# Documentação do plugin: https://github.com/george-gca/jekyll-socials
+github_username: gustavo-souza21
+# email: seu-email@exemplo.com # descomente e preencha para exibir o ícone de e-mail
+# linkedin_username: seu-usuario # descomente para exibir o LinkedIn
+# cv_pdf: /assets/pdf/cv.pdf # coloque seu currículo em assets/pdf/cv.pdf e descomente
+rss_icon: true

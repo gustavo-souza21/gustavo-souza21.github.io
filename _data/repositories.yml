@@ -1,0 +1,7 @@
+# Usado apenas se você criar uma página de repositórios.
+github_users:
+  - gustavo-souza21
+
+repo_description_lines_max: 2
+
+github_repos: []

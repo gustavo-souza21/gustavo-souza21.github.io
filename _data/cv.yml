@@ -1,0 +1,11 @@
+# Dados do currículo (não usados enquanto não houver uma página de CV).
+cv:
+  name: Gustavo Souza
+  label: Graduando em Sistemas de Informação
+  summary: Desenvolvedor web, aprendendo segurança da informação.
+
+  social_networks:
+    - network: GitHub
+      username: gustavo-souza21
+
+  sections: {}

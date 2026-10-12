@@ -1,0 +1,6 @@
+# Cores e links de venues (opcional). A chave deve ser igual ao campo "abbr" no BibTeX.
+# Exemplo:
+# "SBSeg":
+#   url: https://exemplo.com
+#   color: "#00369f"
+{}
